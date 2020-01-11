@@ -6,14 +6,15 @@ import router from './router'
 import store from './stores'
 // 引入 处理后的axios
 import axios from './utils/axios'
+// 引入总线
+import bus from 'vue-bus'
+// 引入element组件
+import ElementUI from 'element-ui'
+// 引入element 图标
+import 'element-ui/lib/theme-chalk/icon.css'
 
-//引入公共样式
-import './styles/common.scss'
-
-// 引入iview 4.0
-import ViewUI from 'view-design'
-
-Vue.use(ViewUI)
+Vue.use(ElementUI)
+Vue.use(bus)
 
 Vue.config.productionTip = false
 
@@ -46,7 +47,7 @@ axios.interceptors.response.use(
 )
 
 
-// 全局加载进度条
+/*//
 router.beforeEach((to,from,next) => {
   ViewUI.LoadingBar.start();
   next()
@@ -54,7 +55,7 @@ router.beforeEach((to,from,next) => {
 
 router.afterEach(route => {
   ViewUI.LoadingBar.finish();
-});
+});*/
 
 new Vue({
   router,

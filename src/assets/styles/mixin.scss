@@ -1,0 +1,44 @@
+// 鼠标经过
+@mixin hover{
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+// flex居中对齐
+@mixin flexCenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// 混入背景
+@mixin bgImg80($src){
+  background: url($src) center center /80% no-repeat;
+}
+
+// 阴影
+@mixin box-shadow($value...) {
+  -webkit-box-shadow: $value;
+  box-shadow: $value;
+}
+
+// 文字不换行，超出部分用省略号表示
+@mixin nowrap {
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  vertical-align: 0;
+}
+
+// 清浮动
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    *height: 0%;
+  }
+}
