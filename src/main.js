@@ -12,6 +12,8 @@ import bus from 'vue-bus'
 import ElementUI from 'element-ui'
 // 引入element 图标
 import 'element-ui/lib/theme-chalk/icon.css'
+// 引入阿里巴巴矢量图标库
+import './assets/iconfont/iconfont.css'
 
 Vue.use(ElementUI)
 Vue.use(bus)

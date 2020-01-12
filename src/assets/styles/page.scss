@@ -45,3 +45,123 @@
   }
 
 }
+#app {
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  // position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 70px;
+  font-size: 22px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  .collapse-btn {
+    width: 63px;
+    text-align: center;
+    height: 100%;
+    cursor: pointer;
+    line-height: 70px;
+  }
+
+  .logo {
+    //float: left;
+    margin-left: 20px;
+    line-height: 70px;
+    height: 70px;
+    letter-spacing: 2px;
+  }
+  .header-el-menu {
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse;
+    .el-submenu__title {
+      height: 70px;
+    }
+  }
+
+  .header-right {
+    // float: right;
+    padding-right: 20px;
+  }
+
+  .header-user-con {
+    display: flex;
+    height: 70px;
+    align-items: center;
+    font-size: 16px;
+  }
+
+  .user-name {
+    margin: 0 20px 0 10px;
+  }
+
+  .user-avator {
+    margin-left: 20px;
+  }
+
+  .user-avator img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .user-logout {
+    border: 1px solid #fff;
+    border-radius: 18px;
+    padding: 3px 18px;
+    font-size: 14px;
+  }
+
+  .collapse-btn:hover {
+    background: rgba(0, 0, 0, 0.15)
+  }
+}
+.sidebar {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 70px;
+  flex: 1;
+  bottom: 0;
+  overflow-y: scroll;
+  z-index: 1;
+  .sidebar-el-menu:not(.el-menu--collapse) {
+    width: 250px;
+  }
+   ul {
+    height: 100%;
+  }
+}
+
+.header-el-menu.el-menu--horizontal.el-menu {
+  background: transparent!important;
+  border-bottom: none!important;
+  .el-submenu {
+    .el-submenu__title {
+      height: 70px;
+      line-height: 70px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    .el-submenu__icon-arrow {
+      margin-top: 0;
+    }
+    &.is-active .el-submenu__title {
+      border-bottom:none;
+    }
+    &.is-opened .el-submenu__title {
+      @include hover();
+    }
+    &:hover .el-submenu__title  {
+      background-color: transparent;
+      @include hover();
+    }
+  }
+}
+
+

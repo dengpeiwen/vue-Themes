@@ -53,8 +53,8 @@
                                 type: 'error',
                                 message: msg
                             });
-                        })*/;
-                        // this.$router.push('/main')
+                        })*/
+                        this.$router.push('/main')
                     } else {
                         return false;
                     }

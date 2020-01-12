@@ -3,6 +3,11 @@ body {
   @import './element-variables';
 
   background: #F5F7FA;
+  color: $--color-text-regular;
+
+  .title::before {
+    background: #324157;
+  }
 
   .c-danger {
     color: $--color-danger

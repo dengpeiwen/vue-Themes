@@ -31,11 +31,29 @@ textPage {
 
 .content {
   width: 100%;
-  height: calc(100% - 50px);
+  padding: 10px;
   overflow-y: scroll;
   box-sizing: border-box;
 }
 
+.title {
+  line-height: 50px;
+  letter-spacing: 1px;
+  font-size: 16px;
+  border-bottom: 1px solid #DCDFE6;
+  display: flex;
+  vertical-align: middle;
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 30px;
+    margin: auto 10px;
+    border-radius: 2px;
+    background-color: #000;
+  }
+  @include box-shadow(0 1px 2px 0 rgba(0,0,0,0.05))
+}
 .container {
   margin: 15px;
   padding: 15px;
