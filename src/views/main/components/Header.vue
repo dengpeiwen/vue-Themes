@@ -7,10 +7,8 @@
         <div class="logo">多主题系统</div>
         <el-menu class="header-el-menu" mode="horizontal" @select="handleSelect">
             <el-submenu index="1">
-                <template slot="title"><i class="iconfont icon-jingzi"></i> <span>换肤</span></template>
-                <el-menu-item :index="item.key" v-for="item in themeList">{{item.name}}</el-menu-item>
-                <el-menu-item index="2-2">主题2</el-menu-item>
-                <el-menu-item index="2-3">主题3</el-menu-item>
+                <template slot="title"><i class="iconfont icon-jingzi"></i> <span>{{defaultTheme}}</span></template>
+                <el-menu-item :index="item.key" v-for="(item, key) in themeList" :key="key">{{item.name}}</el-menu-item>
             </el-submenu>
         </el-menu>
         <div class="header-right">
@@ -46,8 +44,13 @@
                 this.collapse = !this.collapse;
                 this.$bus.$emit('collapse', this.collapse);
             },
-            handleSelect(name) {
-                setTheme(name)
+            // 选中主题
+            handleSelect(key) {
+                const find =  this.themeList.find(item => {
+                   return  item.key === key
+                });
+                this.defaultTheme = find.name
+                setTheme(key)
             }
         }
     }

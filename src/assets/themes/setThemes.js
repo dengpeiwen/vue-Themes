@@ -8,10 +8,10 @@
 import './dark/style.scss';
 
 // 默认主题
-export const defaultTheme = 'default';
+export const defaultTheme = '默认';
 export const themeList = [
-    {name: '深黑', key: 'dark'},
-    {name: '默认', key: 'default'}
+    {name: '默认', key: 'default'},
+    {name: '深黑', key: 'dark'}
 ];
 
 /**
