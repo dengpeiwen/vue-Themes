@@ -11,7 +11,8 @@ import './dark/style.scss';
 export const defaultTheme = '默认';
 export const themeList = [
     {name: '默认', key: 'default'},
-    {name: '深黑', key: 'dark'}
+    {name: '深黑', key: 'dark'},
+    {name: '黑金', key: 'yellow'}
 ];
 
 /**

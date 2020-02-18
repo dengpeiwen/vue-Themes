@@ -77,6 +77,10 @@ textPage {
   display: flex;
 }
 
+.el-menu--horizontal .el-menu .el-menu-item {
+  background-color: transparent;
+}
+
 .pLabel {
   margin-bottom: 10px;
   padding-left: 13px;

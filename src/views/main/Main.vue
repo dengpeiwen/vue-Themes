@@ -15,12 +15,14 @@
 <script>
     import DhHeader from './components/Header'
     import DhSiderbar from './components/Siderbar'
+    import dateFormat from '../../utils/common'
     export default {
         name: "Main",
         data() {
             return {
                 collapse: false,
-                keepAlive: []
+                keepAlive: [],
+                date:new Date()
             }
         },
         components: {
@@ -31,6 +33,10 @@
             this.$bus.$on('collapse', msg => {
                 this.collapse = msg;
             })
+
+        },
+        methods: {
+
         }
     }
 </script>

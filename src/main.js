@@ -14,39 +14,53 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/icon.css'
 // 引入阿里巴巴矢量图标库
 import './assets/iconfont/iconfont.css'
+// 引入公共过滤器
+import * as filters from './utils/filters'
 
-Vue.use(ElementUI)
-Vue.use(bus)
+Vue.use(ElementUI);
+Vue.use(bus);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+// 将axios挂载到vue上
+Vue.prototype.axios = axios;
+// 将过滤器挂载在vue上
+Vue.prototype.$filters = filters;
 
-// http response 服务器相应拦截，拦截401，403错误
-axios.interceptors.response.use(
-    response => {
-      // 处理相应数据
-      if(!response.data.status==='200'){
-        return Promise.resolve(response);
-      } else {
-        return Promise.reject(response);
-      }
-    },
-    error => {
-      if (error.response) {
-        switch (error.response.status) {
-          case 401:
-            router.replace({
-              path: '/login',
+// 全局注入过滤器
+Object.keys(filters).forEach(key => {
+    Vue.filter(key, filters[key])
+});
+
+Vue.use((Vue) => {
+    ((requireContext) => {
+        const arr = requireContext.keys().map(requireContext);
+        (arr || []).forEach((directive) => {
+            directive = directive.__esModule && directive.default ? directive.default : directive;
+            Object.keys(directive).forEach((key) => {
+                Vue.directive(key, directive[key]);
             });
-            break;
-          case 403:
-            router.replace({
-              path: '/login',
-            });
-            break;
-        }
-      }
-    }
-)
+        });
+    })(require.context('./utils/directives', false, /^\.\/.*\.js$/));
+});
+
+Vue.use((Vue) => {
+    ((requireContext) => {
+        const arr = requireContext.keys().map(requireContext);
+        (arr || []).forEach((fileName) => {
+            debugger
+            // 全局注册组件
+/*
+            Vue.component(
+                fileName,
+                // 如果这个组件选项是通过 `export default` 导出的，
+                // 那么就会优先使用 `.default`，
+                // 否则回退到使用模块的根。
+                componentConfig.default || componentConfig
+            )
+*/
+        });
+    })(require.context('./components', false, /^\.\/.*\.vue$/));
+});
 
 
 /*//
