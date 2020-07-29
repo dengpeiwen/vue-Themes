@@ -1,0 +1,14 @@
+{
+  "author": "",
+  "description": "",
+  "license": "ISC",
+  "main": "authox.vue",
+  "name": "@suc/authox",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.5",
+  "__npminstall_done": "Wed Sep 04 2019 13:13:03 GMT+0800 (中国标准时间)",
+  "_from": "@suc/authox@1.0.5",
+  "_resolved": "http://192.168.80.51:7001/@suc/authox/download/@suc/authox-1.0.5.tgz"
+}

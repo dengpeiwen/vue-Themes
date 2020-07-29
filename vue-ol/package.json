@@ -1,0 +1,19 @@
+{
+  "name": "@suc/vue-ol",
+  "version": "1.5.5",
+  "description": "基于 vue 对 ol 进行组件封装",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xiarx",
+  "license": "ISC",
+  "dependencies": {
+    "file-saver": "^2.0.1",
+    "ol": "^5.3.0",
+    "projzh": "^0.5.0"
+  },
+  "__npminstall_done": "Wed Sep 04 2019 13:13:03 GMT+0800 (中国标准时间)",
+  "_from": "@suc/vue-ol@1.5.5",
+  "_resolved": "http://192.168.80.51:7001/@suc/vue-ol/download/@suc/vue-ol-1.5.5.tgz"
+}
